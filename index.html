@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Slideshow</title>
+    <style>
+        img { width: 100%; height: auto; }
+        .slideshow-container { max-width: 100%; position: relative; }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <img id="slideImage" src="path/to/image1.jpg" alt="Slideshow Image">
+    </div>
+
+    <script>
+        const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+        let index = 0;
+        function showNextImage() {
+            index = (index + 1) % images.length;
+            document.getElementById("slideImage").src = images[index];
+        }
+        setInterval(showNextImage, 2000); // Change every 2 seconds
+    </script>
+</body>
+</html>
