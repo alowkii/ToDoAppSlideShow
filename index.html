@@ -13,6 +13,8 @@
         <img id="slideImage" src="path/to/image1.jpg" alt="Slideshow Image">
     </div>
 
+    <h2>Image loading takes 1-3 seconds to load</h2>
+
     <script>
         const images = ["https://github.com/user-attachments/assets/20f2e1d1-5fd2-495b-a896-b9cfcd856821", 
                         "https://github.com/user-attachments/assets/06aae5bb-a685-4092-a561-522592d4b46b", 
@@ -26,6 +28,7 @@
         function showNextImage() {
             index = (index + 1) % images.length;
             document.getElementById("slideImage").src = images[index];
+            document.querySelector("h2").remove();
         }
         setInterval(showNextImage, 2000); // Change every 2 seconds
     </script>
